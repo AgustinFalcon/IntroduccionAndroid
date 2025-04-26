@@ -41,14 +41,34 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
         app:layout_constraintLeft_toRightOf="@+id/btnNext"/>
 
+    <TextView
+        android:id="@+id/tvTitleSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:text="Seleccione un color"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAge"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <Spinner
+        android:id="@+id/spinnerColors"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleSpinner"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
 
     <Button
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="next"
+        android:text="Save"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAge"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerColors"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
