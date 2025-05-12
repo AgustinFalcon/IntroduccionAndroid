@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/blue"
+    android:focusable="true">
+
+
+
+    <ImageView
+        android:id="@+id/ivUser"
+        android:layout_width="150dp"
+        android:layout_height="126dp"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/fideo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tvNameUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Fideo Di Maria"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginStart="16dp"
+        android:textAlignment="textStart"
+        app:layout_constraintTop_toBottomOf="@+id/ivUser"
+        app:layout_constraintLeft_toLeftOf="@+id/ivUser"
+        app:layout_constraintRight_toRightOf="@+id/ivUser"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
