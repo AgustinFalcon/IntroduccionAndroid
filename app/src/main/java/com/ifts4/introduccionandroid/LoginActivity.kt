@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
     private fun checkAutoLogin() {
         Log.d("LoginActivity", "autlogin = ${preferences.getBoolean("autoLogin", false)}, isLoggedIn = ${preferences.getBoolean("isLoggedIn", false)}")
         if (preferences.getBoolean("autoLogin", false) && preferences.getBoolean("isLoggedIn", false)) {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, BottomMenuActivity::class.java)
             startActivity(intent)
         }
     }
@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
                 edit.putBoolean("autoLogin", checkBox)
                 edit.putBoolean("isLoggedIn", true)
                 edit.apply()
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, BottomMenuActivity::class.java)
                 startActivity(intent)
 
             } else {

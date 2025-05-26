@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemLoginFragment"
+        android:icon="@drawable/ic_item_one"
+        android:title="Login"/>
+
+
+    <item
+        android:id="@+id/itemRegisterFragment"
+        android:icon="@drawable/ic_item_two"
+        android:title="Registro"/>
+
+
+</menu>
