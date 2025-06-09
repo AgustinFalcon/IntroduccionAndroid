@@ -1,13 +1,12 @@
-package com.ifts4.introduccionandroid
+package com.ifts4.introduccionandroid.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.ifts4.introduccionandroid.R
 import com.ifts4.introduccionandroid.bottomMenuFragments.DescriptionFragment
-import com.ifts4.introduccionandroid.bottomMenuFragments.SettingsFragment
 import com.ifts4.introduccionandroid.databinding.ActivityBottomMenuBinding
 
 class BottomMenuActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {

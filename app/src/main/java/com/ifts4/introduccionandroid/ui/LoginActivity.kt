@@ -1,4 +1,4 @@
-package com.ifts4.introduccionandroid
+package com.ifts4.introduccionandroid.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.google.gson.Gson
+import com.ifts4.introduccionandroid.Colors
+import com.ifts4.introduccionandroid.Person
 import com.ifts4.introduccionandroid.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -43,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
     private fun checkAutoLogin() {
         Log.d("LoginActivity", "autlogin = ${preferences.getBoolean("autoLogin", false)}, isLoggedIn = ${preferences.getBoolean("isLoggedIn", false)}")
         if (preferences.getBoolean("autoLogin", false) && preferences.getBoolean("isLoggedIn", false)) {
-            val intent = Intent(this, BottomMenuActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }
@@ -59,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                 edit.putBoolean("autoLogin", checkBox)
                 edit.putBoolean("isLoggedIn", true)
                 edit.apply()
-                val intent = Intent(this, BottomMenuActivity::class.java)
+                val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
 
             } else {
