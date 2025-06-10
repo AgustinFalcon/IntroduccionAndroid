@@ -1,4 +1,4 @@
-package com.ifts4.introduccionandroid.ui
+package com.ifts4.introduccionandroid.ui.update
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ifts4.introduccionandroid.R
 import com.ifts4.introduccionandroid.databinding.FragmentUpdateBinding
-import com.ifts4.introduccionandroid.ui.model.User
+import com.ifts4.introduccionandroid.data.model.User
 
 
 class UpdateFragment : Fragment() {

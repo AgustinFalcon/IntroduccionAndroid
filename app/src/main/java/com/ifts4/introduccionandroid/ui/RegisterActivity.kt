@@ -9,8 +9,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.gson.Gson
-import com.ifts4.introduccionandroid.Colors
-import com.ifts4.introduccionandroid.Person
+import com.ifts4.introduccionandroid.data.model.Colors
+import com.ifts4.introduccionandroid.data.model.Person
 import com.ifts4.introduccionandroid.R
 //import com.google.gson.Gson
 import com.ifts4.introduccionandroid.databinding.ActivityRegisterBinding

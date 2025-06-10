@@ -1,12 +1,12 @@
-package com.ifts4.introduccionandroid.ui
+package com.ifts4.introduccionandroid.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ifts4.introduccionandroid.databinding.ItemRecyclerviewListBinding
-import com.ifts4.introduccionandroid.ui.model.User
+import com.ifts4.introduccionandroid.data.model.User
 
-class ListAdapter(val onUserClick:(user: User) -> Unit): RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
+class ListAdapter(val onUserClick: ListFragment/*val onUserClick:(user: User) -> Unit*/): RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
     private var userList = listOf<User>(
         User(1, "Pepe", "Mujica", 89),
@@ -27,7 +27,8 @@ class ListAdapter(val onUserClick:(user: User) -> Unit): RecyclerView.Adapter<Li
             }
 
             binding.root.setOnClickListener {
-                onUserClick(user)
+                //onUserClick(user)
+                onUserClick.onClick(user)
                 //val bundle = Bundle()
                 //bundle.putSerializable("animal", user)
                 //itemView.findNavController().navigate(R.id.action_listFragment_to_detailFragment, bundle)
@@ -35,12 +36,12 @@ class ListAdapter(val onUserClick:(user: User) -> Unit): RecyclerView.Adapter<Li
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter.ListViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val binding = ItemRecyclerviewListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ListViewHolder(binding = binding)
     }
 
-    override fun onBindViewHolder(holder: ListAdapter.ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val user = userList.get(position)
         holder.bind(user = user)
     }

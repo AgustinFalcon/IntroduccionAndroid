@@ -1,4 +1,4 @@
-package com.ifts4.introduccionandroid.ui
+package com.ifts4.introduccionandroid.ui.add
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.ifts4.introduccionandroid.R
 import com.ifts4.introduccionandroid.databinding.FragmentAddBinding
-import com.ifts4.introduccionandroid.ui.model.User
+import com.ifts4.introduccionandroid.data.model.User
 
 
 class AddFragment : Fragment() {

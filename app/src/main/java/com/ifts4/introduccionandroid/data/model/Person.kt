@@ -1,4 +1,6 @@
-package com.ifts4.introduccionandroid
+package com.ifts4.introduccionandroid.data.model
+
+import com.ifts4.introduccionandroid.data.model.Colors
 
 data class Person(
     val name: String,
