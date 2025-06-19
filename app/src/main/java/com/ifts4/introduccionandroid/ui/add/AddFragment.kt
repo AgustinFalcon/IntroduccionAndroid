@@ -6,15 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.ifts4.introduccionandroid.R
 import com.ifts4.introduccionandroid.databinding.FragmentAddBinding
 import com.ifts4.introduccionandroid.data.model.User
+import com.ifts4.introduccionandroid.ui.viewModel.UserViewModel
 
 
 class AddFragment : Fragment() {
 
     private lateinit var binding: FragmentAddBinding
+    private val userViewModel by viewModels<UserViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +40,9 @@ class AddFragment : Fragment() {
 
             if (name.isNotBlank() && lastName.isNotBlank() && age.isNotBlank()) {
                 val user = User(id = 0, name = name, lastName = lastName, age = age.toInt())
+                userViewModel.insertUser(user = user)
 
+                findNavController().navigate(R.id.action_addFragment_to_listFragment)
 
                 findNavController().navigate(R.id.action_addFragment_to_listFragment)
 

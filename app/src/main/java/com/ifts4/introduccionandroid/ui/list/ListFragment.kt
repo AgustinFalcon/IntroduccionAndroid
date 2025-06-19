@@ -56,7 +56,8 @@ class ListFragment : Fragment(), OnUserClick {
             .fallbackToDestructiveMigration()
             .build()
 
-        appDatabase.userDao().insert(User(name = "Pepe", lastName = "Mujica", age = 89))
+
+        //appDatabase.userDao().insert(User(name = "Pepe", lastName = "Mujica", age = 89))
     }
 
     private fun setupRecyclerView() {

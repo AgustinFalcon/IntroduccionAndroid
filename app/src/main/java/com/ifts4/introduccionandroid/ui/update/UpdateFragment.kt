@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.ifts4.introduccionandroid.R
 import com.ifts4.introduccionandroid.databinding.FragmentUpdateBinding
 import com.ifts4.introduccionandroid.data.model.User
+import com.ifts4.introduccionandroid.ui.viewModel.UserViewModel
 
 
 class UpdateFragment : Fragment() {
@@ -17,6 +20,7 @@ class UpdateFragment : Fragment() {
     var user: User? = null
 
     private lateinit var binding: FragmentUpdateBinding
+    private val userViewModel by viewModels<UserViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +43,21 @@ class UpdateFragment : Fragment() {
 
 
         binding.btnUpdateUser.setOnClickListener {
-            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+            val name = binding.etName.text.toString()
+            val lastName = binding.etLastName.text.toString()
+            val age = binding.etAge.text.toString()
+
+            if (name.isNotBlank() && lastName.isNotBlank() && age.isNotBlank()) {
+
+                //val user = User(user.id, name, lastName, age.toInt())
+                val userCopy = user!!.copy(name = name, lastName = lastName, age = age.toInt())
+                userViewModel.updateUser(user = userCopy)
+
+                findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+
+            } else {
+                Toast.makeText(requireContext(), "Complete todos los datos!", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.btndeleteUser.setOnClickListener {
